@@ -6,7 +6,7 @@ public class DataSet {
 	
 	private int numOfCourse;
 	
-	private int maxNumOfCourse;
+	private int maxCoursePerSem;
 	
 	private ArrayList<Course> courses;
 	
@@ -25,7 +25,7 @@ public class DataSet {
 	}
 	
 	public void setMaxNumOfCourse(int max) {
-		this.maxNumOfCourse = max;
+		this.maxCoursePerSem = max;
 	}
 	
 	public boolean addCourse(Course c) {
@@ -52,8 +52,8 @@ public class DataSet {
 		return this.numOfCourse;
 	}
 	
-	public int getMaxNumOfCourse() {
-		return this.maxNumOfCourse;
+	public int getMaxCoursePerSem() {
+		return this.maxCoursePerSem;
 	}
 	
 	public ArrayList<Course> getCourses() {

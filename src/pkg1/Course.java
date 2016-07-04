@@ -2,6 +2,11 @@ package pkg1;
 
 import java.util.ArrayList;
 
+/**
+ * Course class used to store all the information about one specific course
+ * @author Chao Song
+ *
+ */
 public class Course {
 	
 	private String courseName;

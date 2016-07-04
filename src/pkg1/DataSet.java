@@ -1,22 +1,23 @@
 package pkg1;
 
 import java.util.ArrayList;
-
+/**
+ * Used to store a set of data such as number of courses or max number of courses.
+ * @author Chao Song
+ *
+ */
 public class DataSet {
 	
 	private int numOfCourse;
 	
 	private int maxCoursePerSem;
 	
-	private ArrayList<Course> courses;
-	
-	private ArrayList<String> courseFinished;
+	private ArrayList<Course> courseFinished;
 	
 	private ArrayList<Course> courseLeft;
 	
 	public DataSet() {
-		courses = new ArrayList<Course>();
-		courseFinished = new ArrayList<String>();
+		courseFinished = new ArrayList<Course>();
 		courseLeft = new ArrayList<Course>();
 	}
 	
@@ -28,19 +29,22 @@ public class DataSet {
 		this.maxCoursePerSem = max;
 	}
 	
-	public boolean addCourse(Course c) {
+	public void addLeftCourse(Course c) {
 		
-		courses.add(c);
 		courseLeft.add(c);
-		return courses.indexOf(c) != -1;
+		
+		if(courseFinished.contains(c)) {
+			courseFinished.remove(c);
+		}
+
 	}
 	
 	public void addFinishedCourse(Course cf) {
-		courseFinished.add(cf.getCourseName());
+		courseFinished.add(cf);
 		courseLeft.remove(cf);
 	}
 	
-	public ArrayList<String> getCourseFinished() {
+	public ArrayList<Course> getCourseFinished() {
 		return courseFinished;
 	}
 	
@@ -56,8 +60,5 @@ public class DataSet {
 		return this.maxCoursePerSem;
 	}
 	
-	public ArrayList<Course> getCourses() {
-		return courses;
-	}
-	
 }
+
